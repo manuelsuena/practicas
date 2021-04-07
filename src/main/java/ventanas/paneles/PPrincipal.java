@@ -5,7 +5,6 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
-import ventanas.VentanaCultural;
 import ventanas.botones.BotonPrincipal;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -201,12 +200,15 @@ public class PPrincipal extends JPanel implements ActionListener{
     //Seccion de acciones de los botones para nuevas ventanas.
     @Override
     public void actionPerformed(ActionEvent evento) {
+        
         if(evento.getSource() == botonCultural){
             panelCultural = new PCultural();
             JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
             frame.setContentPane(panelCultural);
             this.setVisible(false);   
         }
+        
+        
 
         if(evento.getSource() == botonArtistico){
             panelArtistico = new PArtistico();
@@ -214,20 +216,20 @@ public class PPrincipal extends JPanel implements ActionListener{
             frame.setContentPane(panelArtistico);
             this.setVisible(false);            
         }
-
+        
         if(evento.getSource() == botonDeportivo){
             panelDeportivo = new PDeportivo();
             JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
             frame.setContentPane(panelDeportivo);
             this.setVisible(false);            
-        }
-        
+        } 
         if(evento.getSource() == botonAnalogo){
             panelAnalogo = new PAnalogo();
             JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
             frame.setContentPane(panelAnalogo);
             this.setVisible(false);          
         }
+       
     }
     void centrarTexto(JTextPane texto){
         StyledDocument parrafo = texto.getStyledDocument();
